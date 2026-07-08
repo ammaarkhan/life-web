@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>life · ammaar khan</title>
+    <meta name="theme-color" content="#161412" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>%F0%9F%A7%AD</text></svg>"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="life" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,340;0,9..144,400;1,9..144,340;1,9..144,400&family=Karla:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="glow" aria-hidden="true"></div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <main class="page">
+      <header class="mast" id="mast" hidden>
+        <span class="wordmark">life</span>
+        <nav class="views" aria-label="views">
+          <a href="#day" data-view="day">today</a>
+          <a href="#calendar" data-view="calendar">calendar</a>
+          <a href="#log" data-view="log">log</a>
+          <a href="#guide" data-view="guide">guide</a>
+        </nav>
+        <span class="sync-dot" id="sync-dot" title="synced"></span>
+      </header>
+
+      <div id="app"></div>
+    </main>
+
+    <script src="app.js"></script>
+  </body>
+</html>
