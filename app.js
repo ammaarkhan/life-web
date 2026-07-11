@@ -95,7 +95,7 @@ function checklistFor(dISO) {
   for (const it of cfg.checklist) {
     if (it.weekdaysOnly && dow > 4) continue;
     if (it.key === "main") {
-      items.push({ key: "main", label: plan.label, main: true, plan });
+      items.push({ key: "main", label: plan.label, main: true, plan, group: it.group });
     } else {
       items.push(it);
     }
@@ -468,11 +468,17 @@ function renderDay() {
   const stats = weekStats(dISO);
   const cfg = state.config.data;
 
+  let lastGroup = null;
   const rows = items
     .map((it) => {
       const done = rec.checks[it.key] ? " done" : "";
       const main = it.main ? " main" : "";
-      let html = `
+      let html = "";
+      if (it.group && it.group !== lastGroup) {
+        html += `<p class="grp">${esc(it.group)}</p>`;
+        lastGroup = it.group;
+      }
+      html += `
       <button class="row${done}${main}" data-check="${it.key}">
         <span class="box"></span><span>${esc(it.label)}</span>
       </button>`;
