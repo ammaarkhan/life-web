@@ -544,7 +544,11 @@ input::placeholder {
   height: 19px;
   border-radius: 50%;
   border: 1px solid rgba(234, 228, 216, 0.18);
-  background: conic-gradient(var(--accent) calc(var(--p) * 1%), transparent 0);
+  background: linear-gradient(
+    to top,
+    var(--accent) calc(var(--p) * 1%),
+    transparent calc(var(--p) * 1% + 1px)
+  );
 }
 
 .cal-c.future .cal-dot {
