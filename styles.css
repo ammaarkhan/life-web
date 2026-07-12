@@ -377,7 +377,6 @@ input::placeholder {
 
 .row.main > span:last-child {
   color: var(--ink);
-  font-weight: 600;
 }
 
 .row.main.done > span:last-child {

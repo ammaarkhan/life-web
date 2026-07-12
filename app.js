@@ -94,6 +94,7 @@ function checklistFor(dISO) {
   const items = [];
   for (const it of cfg.checklist) {
     if (it.weekdaysOnly && dow > 4) continue;
+    if (it.fridayOnly && dow !== 4) continue;
     if (it.key === "main") {
       items.push({ key: "main", label: plan.label, main: true, plan, group: it.group });
     } else {
