@@ -375,14 +375,6 @@ input::placeholder {
   color: var(--faint);
 }
 
-.row.main > span:last-child {
-  color: var(--ink);
-}
-
-.row.main.done > span:last-child {
-  color: var(--faint);
-}
-
 /* ---- expandables ---- */
 
 .exp {
