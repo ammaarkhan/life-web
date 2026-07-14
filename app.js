@@ -487,7 +487,9 @@ function renderDay() {
         html += renderGymExpand(dISO, it.plan.letter);
       }
       if (it.expand === "meals") {
-        html += renderMealsExpand();
+        html += renderListExpand("meals", "meal plan", cfg.meals, cfg.mealsNote);
+      } else if (it.expand === "gut") {
+        html += renderListExpand("gut", "gut plan", cfg.gutPlan, cfg.gutPlanNote);
       }
       return html;
     })
@@ -576,15 +578,13 @@ function renderGymExpand(dISO, letter) {
     </div>`;
 }
 
-function renderMealsExpand() {
-  const cfg = state.config.data;
-  const id = "meals";
+function renderListExpand(id, label, items, note) {
   const open = openExpands.has(id);
   return `
-    <button class="exp" data-expand="${id}">${open ? "hide" : "meal plan"}</button>
+    <button class="exp" data-expand="${id}">${open ? "hide" : label}</button>
     <ul class="exlist" ${open ? "" : "hidden"}>
-      ${cfg.meals.map((m) => `<li>${esc(m)}</li>`).join("")}
-      <li class="note">${esc(cfg.mealsNote)}</li>
+      ${(items || []).map((m) => `<li>${esc(m)}</li>`).join("")}
+      ${note ? `<li class="note">${esc(note)}</li>` : ""}
     </ul>`;
 }
 
